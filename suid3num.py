@@ -351,7 +351,7 @@ BARLINE = "------------------------------"
 BANNER  = MAGENTA + "  ___ _   _ _ ___    _____  _ _   _ __  __ \n"
 BANNER  += YELLOW + " / __| | | / |   \\  |__ / \\| | | | |  \\/  |\n"
 BANNER  += BLUE + " \\__ \\ |_| | | |) |  |_ \\ .` | |_| | |\\/| |\n"
-BANNER  += RED + " |___/\\___/|_|___/  |___/_|\\_|\\___/|_|  |_| " + CYAN + " twitter@syed__umar\n"
+BANNER  += RED + " |___/\\___/|_|___/  |___/_|\\_|\\___/|_|  |_| " + CYAN + " twitter@RootkitNinja\n"
 
 
 def list_all_suid_binaries():
